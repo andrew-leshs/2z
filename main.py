@@ -4,11 +4,11 @@ for i in range(a):
     mass.append(int(input()))
 
 control = int(input())
-max_ = float('inf')
-min_ = 0
+lis = list()
 for i in mass:
-    if control > i > min_:
-        min_ = i
-    elif control < i < max_:
-        max_ = i
-print(f"{min_} {max_}")
+    try:
+        if min(mass) == abs(control - i):
+            lis.append(i)
+    except Exception:
+        lis.append(i)
+[print(i, end=" ") for i in lis]
